@@ -4483,13 +4483,4 @@ a.badge:hover {
 #portal-footer {
   padding: 18px;
   border-top: 1px solid #555555;
-  background-color: #cccccc;
-  background-image: -moz-linear-gradient(top, #eeeeee, #999999);
-  background-image: -ms-linear-gradient(top, #eeeeee, #999999);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#999999));
-  background-image: -webkit-linear-gradient(top, #eeeeee, #999999);
-  background-image: -o-linear-gradient(top, #eeeeee, #999999);
-  background-image: linear-gradient(top, #eeeeee, #999999);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#999999', GradientType=0);
 }
