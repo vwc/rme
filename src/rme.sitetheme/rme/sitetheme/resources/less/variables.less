@@ -30,11 +30,21 @@
 @pink:                  #c3325f;
 @purple:                #7a43b6;
 
+// Project Colors
+//----------------
+
+@rme:                   #5b574f;
+@rmeBlue:               #cbe5e6;
+@rmeBlueDark:           #2493a4;
+@rmeBrown:              #59544b;
+@rmeGreen:              #86c847;
+@rmeBackground:         #fcf9f2;
+
 
 // Scaffolding
 // -------------------------
 @bodyBackground:        @white;
-@textColor:             @grayDark;
+@textColor:             @rme;
 
 
 // Links
@@ -73,7 +83,7 @@
 @btnBackgroundHighlight:            darken(@white, 10%);
 @btnBorder:                         #ccc;
 
-@btnPrimaryBackground:              @linkColor;
+@btnPrimaryBackground:              @rmeBlueDark;
 @btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 15%);
 
 @btnInfoBackground:                 #5bc0de;
@@ -82,8 +92,8 @@
 @btnSuccessBackground:              #62c462;
 @btnSuccessBackgroundHighlight:     #51a351;
 
-@btnWarningBackground:              lighten(@orange, 15%);
-@btnWarningBackgroundHighlight:     @orange;
+@btnWarningBackground:              lighten(@rmeGreen, 15%);
+@btnWarningBackgroundHighlight:     @rmeGreen;
 
 @btnDangerBackground:               #ee5f5b;
 @btnDangerBackgroundHighlight:      #bd362f;

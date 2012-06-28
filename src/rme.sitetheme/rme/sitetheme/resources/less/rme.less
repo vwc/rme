@@ -1,5 +1,31 @@
 // Main style sheet for RentMyExpert
 
+#editbar-wrapper {
+    display: none;
+}
+
+#topbar {
+    background: @rmeBackground;
+    height: 60px;
+}
+
+.splashbox {
+    padding: @baseLineHeight * 2 0px;
+    background: @rmeBackground;
+    &.splashbox-blue {
+        background: @rmeBlue;
+    }
+    &.splashbox-brown {
+        background: @rmeBrown;
+        color: @white;
+        text-align: center;
+    }
+    .hero-content {
+        color: @white;
+    }
+}
+
+
 #content-wrapper {
     padding: 60px 0px @baseLineHeight;
 }
