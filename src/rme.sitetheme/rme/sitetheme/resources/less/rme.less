@@ -1,7 +1,13 @@
 // Main style sheet for RentMyExpert
 
+
 .make-some-noise {
     background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
+}
+
+body {
+    background:@rmeBackground;
+    .make-some-noise();
 }
 
 #editbar-wrapper {
@@ -9,12 +15,13 @@
 }
 
 #topbar {
-    background:url(../img/line-distorted.png) no-repeat 50% 33% @rmeBackground;
-    height: 60px;
+    background:url(../img/line-distorted.png) no-repeat 50% 50% @rmeBackground;
+    height: 80px;
+    padding-top: @baseLineHeight;
     text-align:center;
     #font > #family > .serif();
     h1 {
-        text-shadow: 0 -1px 1px @grayLighter, 0 1px 1px @white; 
+        text-shadow: 0 -1px 1px @grayLighter, 0 1px 1px @white;
     }
 }
 
@@ -25,7 +32,7 @@
     .size(@baseLineHeight, 120px);
     .center-block();
     background: @white;
-    border: 1px solid @rmeBlueDark;
+    border: 1px solid @rmeBlueDarker;
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
@@ -37,10 +44,11 @@
     .make-some-noise();
     &.splashbox-blue {
         background: @rmeBlueDark;
+        border-bottom: 1px solid @rmeBrown;
         .icon-megatron {
             margin-top:@baseLineHeight;
             font-size: 100px;
-            color: @white;
+            color: @rme;
         }
     }
     &.splashbox-brown {
@@ -50,6 +58,9 @@
     }
     .hero-content {
         color: @white;
+        #hero-image {
+            padding: @baseLineHeight;
+        }
     }
     .infobox-pricing {
         margin-top: @baseLineHeight;
@@ -81,5 +92,5 @@
 #portal-footer {
     padding: @baseLineHeight;
     //border-top: 1px solid @gray;
-    background:url(../img/line-distorted.png) no-repeat 50% 33% @rmeBackground;
+    background:url(../img/line-distorted.png) no-repeat 50% 33% transparent;
 }
