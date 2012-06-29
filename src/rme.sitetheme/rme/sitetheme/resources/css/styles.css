@@ -2564,15 +2564,15 @@ button.close {
   background-color: #1b567a \9;
 }
 .btn-warning {
-  background-color: #9dd36a;
-  background-image: -moz-linear-gradient(top, #adda82, #86c847);
-  background-image: -ms-linear-gradient(top, #adda82, #86c847);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#adda82), to(#86c847));
-  background-image: -webkit-linear-gradient(top, #adda82, #86c847);
-  background-image: -o-linear-gradient(top, #adda82, #86c847);
-  background-image: linear-gradient(top, #adda82, #86c847);
+  background-color: #86c847;
+  background-image: -moz-linear-gradient(top, #86c847, #86c847);
+  background-image: -ms-linear-gradient(top, #86c847, #86c847);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#86c847), to(#86c847));
+  background-image: -webkit-linear-gradient(top, #86c847, #86c847);
+  background-image: -o-linear-gradient(top, #86c847, #86c847);
+  background-image: linear-gradient(top, #86c847, #86c847);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#adda82', endColorstr='#86c847', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#86c847', endColorstr='#86c847', GradientType=0);
   border-color: #86c847 #86c847 #60962d;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #86c847;
@@ -4477,19 +4477,48 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+.make-some-noise {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
+}
 #editbar-wrapper {
   display: none;
 }
 #topbar {
-  background: #fcf9f2;
+  background: url(../img/line-distorted.png) no-repeat 50% 33% #fcf9f2;
   height: 60px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#topbar h1 {
+  text-shadow: 0 -1px 1px #eeeeee, 0 1px 1px #ffffff;
+}
+.brandbox {
+  background: url(../img/line-spikes.png) repeat-x 0px 100% #fcf9f2;
+}
+#brandname {
+  width: 120px;
+  height: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border: 1px solid #a8d4d7;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
 }
 .splashbox {
   padding: 36px 0px;
   background: #fcf9f2;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
 }
 .splashbox.splashbox-blue {
-  background: #cbe5e6;
+  background: #a8d4d7;
+}
+.splashbox.splashbox-blue .icon-megatron {
+  margin-top: 18px;
+  font-size: 100px;
+  color: #ffffff;
 }
 .splashbox.splashbox-brown {
   background: #59544b;
@@ -4499,10 +4528,32 @@ a.badge:hover {
 .splashbox .hero-content {
   color: #ffffff;
 }
+.splashbox .infobox-pricing {
+  margin-top: 18px;
+  padding: 18px;
+  border-top: 1px solid #a8d4d7;
+  color: #a8d4d7;
+}
+.circled {
+  width: 280px;
+  height: 280px;
+  border: 10px solid #cbe5e6;
+  background: #ffffff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+}
+.circled p {
+  margin-top: 131px;
+}
+.circled p .icon-incircles {
+  font-size: 60px;
+}
 #content-wrapper {
   padding: 60px 0px 18px;
 }
 #portal-footer {
   padding: 18px;
-  border-top: 1px solid #555555;
+  background: url(../img/line-distorted.png) no-repeat 50% 33% #fcf9f2;
 }
