@@ -5,6 +5,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <theme href="minimal.html" if-path="@@edit-tile" />
+    <theme href="frontpage.html" css:if-content="body.section-front-page" />
     
     <!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">
@@ -58,11 +59,18 @@
         <copy attributes="action" css:content="#portal-searchbox form"
             css:theme="#portal-searchbox" />
 
-        <!-- Global navigation -->
-        <replace css:content="#portal-globalnav li" css:theme-children="#main-nav" />
-
-        <!-- Breadcrumbs -->
-        <replace css:content-children='#portal-breadcrumbs' css:theme-children='#breadcrumbs' />
+        <rules css:if-content="body.section-front-page">
+            <replace css:content-children="#fp-box-one"
+                css:theme-children="#hero-box-one" />
+            <replace css:content-children="#fp-box-two"
+                css:theme-children="#hero-box-two" />
+            <replace css:content-children="#expert-box-one"
+                css:theme="#expertinfo-one" />
+            <replace css:content-children="#expert-box-two"
+                css:theme="#expertinfo-two" />
+            <replace css:content-children="#expert-box-three"
+                css:theme="#expertinfo-three" />
+        </rules>
 
         <!-- Document Content -->
         <replace css:content-children="#content" css:theme-children="#main-content" />

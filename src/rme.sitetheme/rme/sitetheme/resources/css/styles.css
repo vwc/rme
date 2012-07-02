@@ -4566,3 +4566,6 @@ body {
   padding: 18px;
   background: url(../img/line-distorted.png) no-repeat 50% 33% transparent;
 }
+#portal-footer a {
+  color: #333333;
+}
