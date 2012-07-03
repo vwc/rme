@@ -185,16 +185,16 @@
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  .row {
+  .row-fixed {
     margin-left: -20px;
     *zoom: 1;
   }
-  .row:before,
-  .row:after {
+  .row-fixed:before,
+  .row-fixed:after {
     display: table;
     content: "";
   }
-  .row:after {
+  .row-fixed:after {
     clear: both;
   }
   [class*="span"] {
@@ -396,16 +396,16 @@
   }
 }
 @media (min-width: 1200px) {
-  .row {
+  .row-fixed {
     margin-left: -30px;
     *zoom: 1;
   }
-  .row:before,
-  .row:after {
+  .row-fixed:before,
+  .row-fixed:after {
     display: table;
     content: "";
   }
-  .row:after {
+  .row-fixed:after {
     clear: both;
   }
   [class*="span"] {

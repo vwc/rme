@@ -11,18 +11,28 @@ body {
 }
 
 #editbar-wrapper {
-    display: none;
 }
 
 #topbar {
     background:url(../img/line-distorted.png) no-repeat 50% 50% @rmeBackground;
-    height: 80px;
+    height: 120px;
     padding-top: @baseLineHeight;
     text-align:center;
     #font > #family > .serif();
     h1 {
         text-shadow: 0 -1px 1px @grayLighter, 0 1px 1px @white;
+        #logo {
+            .center-block();
+            .size(110px, 110px);
+            .text-overflow();
+            text-indent: -10000px;
+            background:url(../img/sprite.png) no-repeat 0px 0px transparent;
+        }
     }
+}
+
+#editbar-wrapper + #topbar {
+    margin-top: 40px;
 }
 
 .brandbox {
@@ -43,6 +53,7 @@ body {
     background: @rmeBackground;
     .make-some-noise();
     &.splashbox-blue {
+        padding: @baseLineHeight 0 0;
         background: @rmeBlueDark;
         border-bottom: 1px solid @rmeBrown;
         .icon-megatron {
@@ -58,6 +69,7 @@ body {
     }
     .hero-content {
         color: @white;
+        padding: @baseLineHeight 0px;
         #hero-image {
             padding: @baseLineHeight;
         }
@@ -68,15 +80,41 @@ body {
         border-top: 1px solid @rmeBlueDark;
         color: @rmeBlueDark;
     }
+    #hero-image {
+        .size(325px, 300px);
+        .text-overflow();
+        text-indent: -10000px;
+        background:url(../img/sprite.png) no-repeat -440px 0px transparent;
+    }
 }
 
 .circled {
-    @circleHeight: 280px;
+    @circleHeight: 200px;
     .square(@circleHeight);
     border: 10px solid @rmeBlue;
     background: @white;
     .border-radius(50%);
     text-align:center;
+    .opacity(75);
+    margin-bottom: @baseLineHeight;
+    &:hover {
+        .opacity(100);
+    }
+    .figurine {
+        .size(160px, 110px);
+        text-indent: -999px;
+        .text-overflow();
+        .center-block();
+        margin-top: @baseLineHeight * 1.5;
+        background:url(../img/sprite.png) no-repeat -117px 0px transparent;
+        &.figurine-design {
+            .size(160px, 90px);
+            background-position: -229px 0px;
+        }
+        &.figurine-python {
+            background-position: -317px 0px;
+        }
+    }
     p {
         margin-top: ((@circleHeight - @baseLineHeight) / 2);
         .icon-incircles {

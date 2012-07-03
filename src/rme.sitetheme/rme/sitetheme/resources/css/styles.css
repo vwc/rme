@@ -147,16 +147,16 @@ a:hover {
   color: #005580;
   text-decoration: underline;
 }
-.row {
+.row-fixed {
   margin-left: -20px;
   *zoom: 1;
 }
-.row:before,
-.row:after {
+.row-fixed:before,
+.row-fixed:after {
   display: table;
   content: "";
 }
-.row:after {
+.row-fixed:after {
   clear: both;
 }
 [class*="span"] {
@@ -4477,6 +4477,399 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+/* styling for overlays (popups) */
+div.overlay {
+  width: auto;
+  height: auto;
+  /* initially overlay is hidden */
+
+  display: none;
+  /* some padding to layout nested elements nicely  */
+
+  margin: 1em;
+  font-size: 80%;
+}
+div.overlay-iframe,
+div.overlay-ajax {
+  width: 60%;
+  min-height: 100px;
+  z-index: 99;
+  /* overlays should be above everything */
+
+}
+div.overlay-iframe {
+  height: 60%;
+}
+/* default close button positioned on upper-left corner */
+div.overlaybg div.close,
+div.overlay div.close {
+  background-image: url(../img/pb_close.png);
+  position: absolute;
+  left: -14px;
+  top: -14px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+.pb-ajax {
+  overflow-y: auto;
+}
+.pb-ajax,
+.pb-image,
+.overlay iframe {
+  background-color: #fff;
+  border: 1px solid #999;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  white-space: normal;
+  box-shadow: 0 0 3em 0.5em #666;
+  -moz-box-shadow: 0 0 3em 0.5em #666;
+  -webkit-box-shadow: 0 0 3em #666;
+}
+.pb-ajax > div {
+  width: 92%;
+  padding: 1em;
+}
+.pb-ajax .documentActions {
+  display: none;
+}
+div.overlay div.close span {
+  display: block;
+  height: 1px;
+  margin: -1px 0 0 -1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+}
+div.overlay textarea {
+  width: 100%;
+}
+/* Hide form elements that don't make sense within an overlay. */
+div.overlay .link-parent {
+  display: none;
+}
+div.overlay #createGroup legend {
+  display: none;
+}
+div.overlay #createGroup fieldset {
+  border: none;
+}
+/* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
+div.overlay p {
+  margin-bottom: 1em;
+}
+div.overlay label {
+  margin-bottom: 0.25em;
+}
+div.overlay a:hover {
+  color: #75ad0a;
+}
+div.overlay a.selected {
+  color: #000000;
+}
+div.overlay .formTab {
+  margin-right: 1em;
+  font-weight: bold;
+}
+div.overlay .formTab.lastFormTab {
+  margin-right: 0em;
+}
+div.overlay .formControls a {
+  display: block;
+  margin: 0.75em;
+}
+/* @end */
+/* @group Content History */
+div.historyRecord {
+  margin-bottom: 1em;
+}
+div.historyTools ul {
+  float: right;
+  margin: 0.5em 1em;
+}
+div.historyTools ul li {
+  display: inline;
+  padding: 0 0.015em;
+}
+div.historyTools ul li a {
+  border-bottom: none;
+}
+div.historyTools form {
+  display: inline;
+}
+.historyByLine {
+  background: #ddd;
+  padding: 0.5em;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  -webkit-border-top-left-radius: 0.5em;
+  -moz-border-radius-topleft: 0.5em;
+  -moz-border-radius-topright: 0.5em;
+}
+div.historyLinks {
+  float: right;
+  clear: right;
+  margin: 0.5em 1em 0 0;
+}
+div.historyComment {
+  padding: 0.5em 1em;
+  border: 1px solid #ddd;
+}
+div.historyComment p {
+  margin: 0;
+  padding-top: 1px;
+}
+a.historyComparePrevious {
+  border-top: 1px dotted #ccc;
+  display: block;
+  margin-top: 3em;
+  text-align: center;
+}
+a.historyComparePrevious span {
+  background-color: white;
+  position: relative;
+  top: -0.75em;
+  padding: 0 0.5em;
+}
+/* @end */
+/* @group Editing */
+/* @group Tabs */
+/* Color differences between the two tab types */
+#content ul.formTabs {
+  background-color: #ddd;
+  border: 0.3em solid #ddd;
+}
+#content-views {
+  float: left;
+  margin-top: 5px;
+  background-color: transparent;
+}
+#content-views li {
+  display: inline;
+  list-style: none;
+}
+/* fix shift on content views list under ie6 */
+/* .ie6 is set on <html> by Modernizr library */
+.ie6 ul#content-views {
+  margin: -2px -3px 0px -3px;
+}
+#content-views a {
+  color: White;
+}
+/* Shared CSS between the two tab types */
+#content ul.formTabs,
+#content-core ul.formTabs {
+  display: block;
+  border-style: solid solid none solid;
+  margin-left: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#content li.formTab,
+#content-core li.formTab {
+  display: inline;
+  margin-right: 0.25em;
+}
+#content-views a,
+#content li.formTab a,
+#content-core li.formTab a {
+  /* this isn't supported by all browsers, so we keep it in a separate rule */
+
+  display: inline-block;
+}
+#content-views a,
+#content li.formTab a,
+#content-core li.formTab a {
+  line-height: 2em;
+  padding: 0 0.75em;
+  text-decoration: none;
+  border: none;
+  margin: 0 ;
+}
+#content-views li.selected a,
+#content li.formTab a.selected,
+#content-core li.formTab a.selected {
+  font-weight: bold;
+}
+#content-views li.selected a,
+#content-views li a:hover,
+#content li.formTab a.selected,
+#content li.formTab a:hover,
+#content-core li.formTab a.selected,
+#content-core li.formTab a:hover {
+  background: White;
+  color: Black;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#content li.formTab a.notify,
+#content-core li.formTab a.notify {
+  background-color: red;
+  color: White;
+}
+#content li.formTab a.required span:after,
+#content-core li.formTab a.required span:after,
+div.field span.required:after {
+  content: "■";
+  color: Red;
+  padding-left: 0.2em;
+}
+#content fieldset.formPanel,
+#content-core fieldset.formPanel {
+  border: none;
+}
+#content fieldset.formPanel.hidden,
+#content-core fieldset.formPanel.hidden {
+  display: none;
+}
+#content div.formControls input.hidden,
+#content-core div.formControls input.hidden {
+  display: none;
+}
+/* @end */
+/* @group Pulldown menus */
+/* @group Personal tools pulldown */
+#portal-personaltools dt {
+  font-weight: normal;
+}
+#portal-personaltools dt.actionMenuHeader a:after {
+  content: " ▼";
+}
+#portal-personaltools dd {
+  right: 0;
+  padding-top: 0.5em;
+}
+#portal-personaltools dd {
+  background: #e3e3e3;
+  padding-bottom: 0.5em;
+}
+#portal-personaltools dd a {
+  line-height: 2em;
+  padding: 0 0.75em;
+}
+#portal-personaltools dd a:hover {
+  background: #205c90;
+  color: White;
+}
+/* @end */
+/* @group Content pulldowns */
+#contentActionMenus li {
+  display: inline;
+}
+#contentActionMenus dl.actionMenu a {
+  background-color: transparent;
+  color: White;
+  z-index: 5;
+}
+#contentActionMenus dl.actionMenu.activated dd {
+  background-color: #222222;
+  color: White;
+  z-index: 5;
+}
+#contentActionMenus dl.actionMenu.activated dd {
+  border-bottom: 0.5em solid #222222;
+  right: -3px;
+}
+#contentActionMenus dl.actionMenu.activated dd a:hover,
+#contentActionMenus dl.actionMenu.activated dd .actionMenuSelected {
+  background-color: White !important;
+  color: #666;
+}
+#contentActionMenus dl.actionMenu {
+  line-height: 18px;
+}
+#folderHeader,
+#contextHeader {
+  border-bottom: 2px solid white;
+}
+#contextHeader {
+  margin-top: 5px;
+}
+/* @end */
+#contentActionMenus {
+  float: right;
+  background: transparent;
+  margin: 0;
+  position: relative;
+  top: 10px;
+  right: -0.24em;
+  padding: 4px 4px -4px 0;
+}
+.actionMenuContent {
+  padding: 0 0.25em;
+}
+dl.actionMenu {
+  float: right;
+  white-space: nowrap;
+  position: relative;
+  margin-left: 0.5em;
+  margin-bottom: 0px;
+}
+dl.actionMenu a,
+dl.actionMenu div {
+  display: block !important;
+  white-space: nowrap;
+}
+dl.actionMenu dt {
+  font-weight: normal;
+}
+span.arrowDownAlternative {
+  font-size: 80%;
+}
+dl.actionMenu.deactivated dt {
+  margin: 0 0.25em;
+}
+dl.actionMenu.deactivated dd {
+  display: none;
+}
+dl.actionMenu.activated dd {
+  position: absolute;
+  width: auto;
+  min-width: 100%;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomleft: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+}
+dl.actionMenu.activated dt a,
+dl.actionMenu.activated dd a,
+dl.actionMenu.activated dd div {
+  margin: 0 0.25em;
+}
+/* @end */
+/* @group Invisibles */
+.hiddenStructure {
+  display: block;
+  background: transparent;
+  background-image: none;
+  /* safari bug */
+
+  border: none;
+  height: 0.1em;
+  overflow: hidden;
+  padding: 0;
+  margin: -0.1em 0 0 -0.1em;
+  width: 1px;
+}
+/* ensures hidden elements don't take up space */
+/* .ie6 is set on <html> by Modernizr library */
+.ie6 .hiddenStructure,
+.ie7 .hiddenStructure {
+  position: absolute;
+}
+#content .visualNoMarker {
+  list-style: none;
+  margin-left: 0;
+}
+.visualClear {
+  clear: both;
+}
 .make-some-noise {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
 }
@@ -4484,18 +4877,30 @@ body {
   background: #fcf9f2;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
 }
-#editbar-wrapper {
-  display: none;
-}
 #topbar {
   background: url(../img/line-distorted.png) no-repeat 50% 50% #fcf9f2;
-  height: 80px;
+  height: 120px;
   padding-top: 18px;
   text-align: center;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 #topbar h1 {
   text-shadow: 0 -1px 1px #eeeeee, 0 1px 1px #ffffff;
+}
+#topbar h1 #logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-indent: -10000px;
+  background: url(../img/sprite.png) no-repeat 0px 0px transparent;
+}
+#editbar-wrapper + #topbar {
+  margin-top: 40px;
 }
 .brandbox {
   background: url(../img/line-spikes.png) repeat-x 0px 100% #fcf9f2;
@@ -4518,6 +4923,7 @@ body {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMACHhIRQoAAAN7SURBVCiRAXADj/wAAkQJcM1mLQnAjAAb4sEhBjkWRBpWAIKF/FlkjVDJKKgA0KxA5QFOFWKpQgBG5PjjxiiDVJtnAHD5UwQVQstA7u8AOAYIMPmwiKga2gBooyeQA+jdVxiNABAIYGkr3lgTDBsAXQBAcGFmEGFEXQAwUgJEk6SsEMjDAApsetkgJK9PKJQAfDApaQUONGIDEgAKpcRsXsojEuY1ACYN4xSjdyGRVLcAsCBxpEiAUIkwYgBGLNoX24Yj9iJRAGMGy8gopJFOQvkAEZgtO9HAJC+9WACKQEJCwJGqpRoIAKYmUxdgMdl89AIApMRLQ/2pQLVbBQBDTLPsYJCDUEjoAHzhwoxoCKB4DAgAAN6ASuQFERMyvQCzWAJoFpkGjFsGAGLQnTrBTH4zIKIAFGUFG3UALzJDiwCmsCEwxUDwgFgIAFi/LtLBIAUJNBEAE4TENLhU8TjOCgAtAYILmwxnJrBoAAhNyenNNwViQFkANAFOhHKUo84QUAD0DRiji8DNOMJqADHrmeMWgFAgRrQAmIm9A9EhEGSBSgAulqWIGymRfxpwAH0DAAQSAnKWgdQASeJNibLEQzNOZwBzyCNrQnAEFoQoAAxMomBElggSqkgAAwFV5OAQZJ28ZwCCFaFCjSWxAObRAB8AJgRUj4BKIygApBGgk0MCkUMxFADVwIDCBY+OdMWgAG1xdOROdABshSMACAFX0QKD4hVCgwB2Mh6ZnAco8kNpAHsI4C8RY9CIiewAqyAZg6UNgAz7mgBkAxCbD25svIhqACgzbQNxciGqYNQAkARc2iVSMJ2lZADNJknADN80kC5jAOOUE5OONKUAsA0ARQLA1ABqDAEQCACIlnFgRPrqeUQyAKkAOV/GAUgi1RAAeAIX22Pv4uTlJABvEiKL1OBOaIWIAEsoNPRyRGQcMM0AQmzLIn0jGg0gNAAqsAQfVSb/NB1UAAi0AywKJQUIjCoA85ksYPNtqJExcQAYgoDzhYBwbWAdAKsgPswqlOqHbJMAUQlvpxLB1UzAGABpyxQ0mCs81wNXACHgmQEVxF1T9FUA8jrxkbDXWRJhoQBgoSwOksFRSSibACNkCSFowJxiMBYA4ek2cwRDk1DM8wCQCsQXTxHsamgRAEGGIlVQmcLwKhUAG+wigJjtKYW0HQC0OKRNEGFqXIOAbRpCReUGtgIAAAAASUVORK5CYII=);
 }
 .splashbox.splashbox-blue {
+  padding: 18px 0 0;
   background: #a8d4d7;
   border-bottom: 1px solid #59544b;
 }
@@ -4533,6 +4939,7 @@ body {
 }
 .splashbox .hero-content {
   color: #ffffff;
+  padding: 18px 0px;
 }
 .splashbox .hero-content #hero-image {
   padding: 18px;
@@ -4543,18 +4950,55 @@ body {
   border-top: 1px solid #a8d4d7;
   color: #a8d4d7;
 }
+.splashbox #hero-image {
+  width: 300px;
+  height: 325px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-indent: -10000px;
+  background: url(../img/sprite.png) no-repeat -440px 0px transparent;
+}
 .circled {
-  width: 280px;
-  height: 280px;
-  border: 10px solid #cbe5e6;
+  width: 200px;
+  height: 200px;
+  border: 10px solid #8acdd6;
   background: #ffffff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   text-align: center;
+  opacity: 0.75;
+  filter: alpha(opacity=75);
+  margin-bottom: 18px;
+}
+.circled:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.circled .figurine {
+  width: 110px;
+  height: 160px;
+  text-indent: -999px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 27px;
+  background: url(../img/sprite.png) no-repeat -117px 0px transparent;
+}
+.circled .figurine.figurine-design {
+  width: 90px;
+  height: 160px;
+  background-position: -229px 0px;
+}
+.circled .figurine.figurine-python {
+  background-position: -317px 0px;
 }
 .circled p {
-  margin-top: 131px;
+  margin-top: 91px;
 }
 .circled p .icon-incircles {
   font-size: 60px;
