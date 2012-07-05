@@ -29,6 +29,11 @@ body {
             background:url(../img/sprite.png) no-repeat 0px 0px transparent;
         }
     }
+    #logo-wrapper {
+        h4 {
+            margin-top: @baseLineHeight * 2.2;
+        }
+    }
 }
 
 #editbar-wrapper + #topbar {
@@ -61,11 +66,31 @@ body {
             font-size: 100px;
             color: @rme;
         }
+        #hero-box-one {
+            h1 {
+                margin-bottom: @baseLineHeight;
+            }
+            h3 {
+                line-height: @baseLineHeight + 4;
+                margin-bottom: @baseLineHeight;
+            }
+        }
     }
     &.splashbox-brown {
         background: @rmeBrown;
         color: @white;
-        text-align: center;
+        #hero-box-two {
+            ul {
+                text-align: left;
+                list-style-type: none;
+                margin-left: 0px;
+                li {
+                    margin-left: 0px;
+                    padding-left: 10px;
+                    font-size:@baseFontSize + 2;
+                }
+            }
+        }
     }
     .hero-content {
         color: @white;
@@ -78,7 +103,8 @@ body {
         margin-top: @baseLineHeight;
         padding: @baseLineHeight;
         border-top: 1px solid @rmeBlueDark;
-        color: @rmeBlueDark;
+        color: @rmeBlue;
+        text-align: center;
     }
     #hero-image {
         .size(325px, 300px);
@@ -96,6 +122,7 @@ body {
     .border-radius(50%);
     text-align:center;
     .opacity(75);
+    .center-block();
     margin-bottom: @baseLineHeight;
     &:hover {
         .opacity(100);
@@ -120,6 +147,16 @@ body {
         .icon-incircles {
             font-size: 60px;
         }
+    }
+}
+
+.expert-info {
+    text-align: center;
+    h3 {
+        margin-bottom: @baseLineHeight;
+    }
+    h5 {
+        margin-bottom: @baseLineHeight / 2;
     }
 }
 

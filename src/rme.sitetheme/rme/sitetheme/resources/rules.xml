@@ -65,11 +65,17 @@
             <replace css:content-children="#fp-box-two"
                 css:theme-children="#hero-box-two" />
             <replace css:content-children="#expert-box-one"
-                css:theme="#expertinfo-one" />
+                css:theme-children="#expertinfo-one" />
             <replace css:content-children="#expert-box-two"
-                css:theme="#expertinfo-two" />
+                css:theme-children="#expertinfo-two" />
             <replace css:content-children="#expert-box-three"
-                css:theme="#expertinfo-three" />
+                css:theme-children="#expertinfo-three" />
+            <replace css:content-children="#price-one"
+                css:theme-children="#price-one" />
+            <replace css:content-children="#price-two"
+                css:theme-children="#price-two" />
+            <replace css:content-children="#price-three"
+                css:theme-children="#price-three" />
         </rules>
 
         <!-- Document Content -->

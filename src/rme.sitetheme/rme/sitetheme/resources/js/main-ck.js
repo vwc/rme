@@ -5,11 +5,16 @@
             e("a[rel=tooltip]").tooltip();
             e("span[rel=twipsy]").tooltip();
         });
-        e("#banner-scrollable").scrollable({
-            circular: !0,
-            speed: 3500
-        }).autoscroll({
-            interval: 2e3
+        e("a.popoverForm").prepOverlay({
+            subtype: "ajax",
+            formselector: "form",
+            filter: "#content > *",
+            noform: "close",
+            config: {
+                expose: {
+                    color: "#fff"
+                }
+            }
         });
     });
 })(jQuery);

@@ -4899,6 +4899,9 @@ body {
   text-indent: -10000px;
   background: url(../img/sprite.png) no-repeat 0px 0px transparent;
 }
+#topbar #logo-wrapper h4 {
+  margin-top: 39.6px;
+}
 #editbar-wrapper + #topbar {
   margin-top: 40px;
 }
@@ -4932,10 +4935,26 @@ body {
   font-size: 100px;
   color: #5b574f;
 }
+.splashbox.splashbox-blue #hero-box-one h1 {
+  margin-bottom: 18px;
+}
+.splashbox.splashbox-blue #hero-box-one h3 {
+  line-height: 22px;
+  margin-bottom: 18px;
+}
 .splashbox.splashbox-brown {
   background: #59544b;
   color: #ffffff;
-  text-align: center;
+}
+.splashbox.splashbox-brown #hero-box-two ul {
+  text-align: left;
+  list-style-type: none;
+  margin-left: 0px;
+}
+.splashbox.splashbox-brown #hero-box-two ul li {
+  margin-left: 0px;
+  padding-left: 10px;
+  font-size: 15px;
 }
 .splashbox .hero-content {
   color: #ffffff;
@@ -4948,7 +4967,8 @@ body {
   margin-top: 18px;
   padding: 18px;
   border-top: 1px solid #a8d4d7;
-  color: #a8d4d7;
+  color: #8acdd6;
+  text-align: center;
 }
 .splashbox #hero-image {
   width: 300px;
@@ -4970,6 +4990,9 @@ body {
   text-align: center;
   opacity: 0.75;
   filter: alpha(opacity=75);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 18px;
 }
 .circled:hover {
@@ -5002,6 +5025,15 @@ body {
 }
 .circled p .icon-incircles {
   font-size: 60px;
+}
+.expert-info {
+  text-align: center;
+}
+.expert-info h3 {
+  margin-bottom: 18px;
+}
+.expert-info h5 {
+  margin-bottom: 9px;
 }
 #content-wrapper {
   padding: 60px 0px 18px;

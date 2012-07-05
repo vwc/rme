@@ -13,11 +13,14 @@
             $('a[rel=tooltip]').tooltip();
             $('span[rel=twipsy]').tooltip();
         });
-        $("#banner-scrollable").scrollable({
-            circular: true,
-            speed: 3500
-        }).autoscroll({
-            interval: 2000
+        $('a.popoverForm').prepOverlay({
+            subtype: 'ajax',
+            formselector: 'form',
+            filter: '#content > *',
+            noform: 'close',
+            config: {
+                expose: {color: '#fff'}
+            }
         });
     });
 }(jQuery));
