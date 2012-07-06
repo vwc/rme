@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="rme.sitecontent"
+      tal:omit-tag=""
+      tal:define="portal context/@@plone_portal_state/portal;
+                  charset portal/email_charset|string:utf-8;
+                  dummy python:request.RESPONSE.setHeader('Content-Type', 'text/plain;;charset=%s' % charset)">
+
+A visitor of http://rent-my-expert.de has requested a callback. Details:
+
+Phone: <span tal:replace="options/phone" tal:omit-tag="" />
+Name: <span tal:replace="options/name | string:No Name provided" tal:omit-tag="" />
+Available: Name: <span tal:replace="options/time | string:No availability timeframe provided" tal:omit-tag="" />
+
+
+---
+Rent my Expert
+Callback Service
+
+</html>

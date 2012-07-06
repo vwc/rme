@@ -10,35 +10,53 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
     <div class="page-header">
-      <h1>Callback request</h1>
+      <h1>Kostenloser R&uuml;ckrufservice</h1>
     </div>
     <p class="lead">
-        Please enter your phone number and additional details to your request.
-        We will get in touch as soon as possible</p>
+      Bitte geben Sie die Telefonnummer ein, unter der wir Sie erreichen können.
+    </p>
 
-    <form class="form form-horizontal"
-        tal:attributes="action request/URL" method="post">
-        <div class="control-group">
-            <label for="fullname" class="control-label">
-               Ihr Name</label>
-            <div class="controls">
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-user" /></span><input
-                      type="text" id="fullname" class="span4"
-                      name="form.name.fullname"
-                      placeholder="Voller Name" />
-                </div>
-            </div>
-        </div>
-        <div class="control-group">
-            <label for="phone" class="control-label">
-                Telefon</label>
+    <form class="form form-inline"
+        id="form-callback"
+        tal:attributes="action request/URL" method="post"
+        tal:define="errors view/errors">
+        <div class="control-group"
+            tal:define="err_phone errors/phone|nothing"
+            tal:attributes="class python:err_phone and 'control-group error' or 'control-group'">
             <div class="controls">
                 <div class="input-prepend">
                     <span class="add-on"><i class="icon-phone" /></span><input
-                      type="text" class="span4" id="phone"
+                      type="text" class="span7" id="phone"
                       name="form.name.phone"
                       placeholder="Telefonnummer" />
+                </div>
+                <div class="help-inline error"
+                  tal:condition="view/errors/phone | nothing"
+                  tal:content="view/errors/phone|nothing" />
+            </div>
+        </div>
+        <div class="control-group"
+            tal:define="err_name errors/fullname|nothing"
+            tal:attributes="class python:err_name and 'control-group error' or 'control-group'">
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user" /></span><input
+                      type="text" id="fullname" class="span7"
+                      name="form.name.fullname"
+                      placeholder="Ansprechpartner" />
+                </div>
+                <div class="help-inline error"
+                  tal:condition="errors/fullname | nothing"
+                  tal:content="errors/fullname|nothing" />
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-time" /></span><input
+                      type="text" class="span7" id="timeframe"
+                      name="form.name.timeframe"
+                      placeholder="Wann k&ouml;nnen wir Sie am Besten erreichen?" />
                 </div>
             </div>
         </div>

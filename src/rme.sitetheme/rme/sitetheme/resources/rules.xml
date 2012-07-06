@@ -81,7 +81,7 @@
         <!-- Document Content -->
         <replace css:content-children="#content" css:theme-children="#main-content" />
         <!--<before css:content="#edit-bar" css:theme="#document-content" />-->
-        <before css:content=".portalMessage" css:theme="#document-content" />
+        <before css:content=".portalMessage" css:theme="#logo-wrapper" />
         <!-- Columns -->
         <!--<replace css:content-children="#portal-column-one > *" css:theme-children="#column-one" />-->
         <!--<replace css:content-children="#portal-column-two > *" css:theme-children="#sidebar" />-->

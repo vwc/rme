@@ -20,7 +20,7 @@
       <div class="btn-group">
         <a href="#test" class="btn btn-primary btn-large popoverForm"
           tal:attributes="href python:portal_url + '/@@callback-request'">
-          Tollfree Service Hotline</a>
+          Kostenloser R&uuml;ckrufservice</a>
       </div>
       <div class="btn-group">
         <a href="#test2" class="btn btn-warning btn-large">

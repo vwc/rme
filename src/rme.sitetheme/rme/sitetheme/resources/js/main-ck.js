@@ -3,7 +3,6 @@
         if (jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 7) return;
         e(function() {
             e("a[rel=tooltip]").tooltip();
-            e("span[rel=twipsy]").tooltip();
         });
         e("a.popoverForm").prepOverlay({
             subtype: "ajax",
@@ -15,6 +14,9 @@
                     color: "#fff"
                 }
             }
+        });
+        e("#tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({
+            effect: "slide"
         });
     });
 })(jQuery);

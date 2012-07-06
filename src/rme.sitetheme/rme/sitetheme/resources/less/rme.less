@@ -148,6 +148,23 @@ body {
             font-size: 60px;
         }
     }
+    .popover-inner {
+        background: @white;
+        .popover-title {
+            background: @rmeBrown;
+            color: @white;
+        }
+        .popover-content {
+            text-align: left;
+            background: @rmeBackground;
+            p {
+                margin-top: 0px;
+            }
+            h5 {
+                margin-bottom: @baseLineHeight;
+            }
+        }
+    }
 }
 
 .expert-info {
@@ -162,6 +179,37 @@ body {
 
 #content-wrapper {
     padding: 60px 0px @baseLineHeight;
+}
+
+input.context {
+    .btn();
+}
+
+#form-callback {
+    input[type="text"] {
+        height: 30px;
+        font-size: 26px;
+        line-height: 28px;
+    }
+    .add-on {
+        height: 30px;
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .form-actions {
+        background: transparent;
+        border-top: 2px solid @rmeBrown;
+    }
+}
+
+dl.portalMessage {
+    .alert();
+    .alert-block();
+    .container();
+    .center-block();
+    &.info {
+        .alert-success();
+    }
 }
 
 #portal-footer {

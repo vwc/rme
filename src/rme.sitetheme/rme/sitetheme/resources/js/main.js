@@ -11,7 +11,6 @@
         }
         $(function () {
             $('a[rel=tooltip]').tooltip();
-            $('span[rel=twipsy]').tooltip();
         });
         $('a.popoverForm').prepOverlay({
             subtype: 'ajax',
@@ -22,5 +21,6 @@
                 expose: {color: '#fff'}
             }
         });
+        $("#tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({ effect: 'slide'});
     });
 }(jQuery));
