@@ -124,7 +124,8 @@ body {
     .opacity(75);
     .center-block();
     margin-bottom: @baseLineHeight;
-    &:hover {
+    &:hover,
+    &.highlighted {
         .opacity(100);
     }
     .figurine {
@@ -186,15 +187,24 @@ input.context {
 }
 
 #form-callback {
-    input[type="text"] {
+    input[type="text"],
+    .uneditable-input {
         height: 30px;
         font-size: 26px;
         line-height: 28px;
+    }
+    textarea {
+        line-height: 28px;
+        font-size:26px;
+        width: 530px;
     }
     .add-on {
         height: 30px;
         font-size: 26px;
         line-height: 26px;
+        &.chzn-add-on {
+            margin-top: -38px;
+        }
     }
     .form-actions {
         background: transparent;

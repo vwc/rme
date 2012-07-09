@@ -1,0 +1,115 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="rme.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+
+  <section id="content-core">
+
+    <header class="page-header">
+      <h1>Ihre Anfrage an unseren Experten</h1>
+    </header>
+
+    <p class="lead">
+      Bitte beschreiben Sie kurz Ihr Unternehmen oder Ihr Projekt</p>
+
+    <form class="form form-inline"
+        id="form-callback"
+        tal:attributes="action request/URL" method="post"
+        tal:define="errors view/errors | nothing">
+        <div class="control-group"
+            tal:define="err_phone errors/email|nothing"
+            tal:attributes="class python:err_phone and 'control-group error' or 'control-group'">
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope" /></span><input
+                      type="text" class="span7" id="email"
+                      name="form.name.email"
+                      required="required"
+                      placeholder="Bitte geben Sie Ihre E-Mail-Adresse an" />
+                </div>
+                <div class="help-inline error"
+                  tal:condition="view/errors/email | nothing"
+                  tal:content="view/errors/email|nothing" />
+            </div>
+        </div>
+        <div class="control-group"
+            tal:define="err_name errors/fullname|nothing"
+            tal:attributes="class python:err_name and 'control-group error' or 'control-group'">
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user" /></span><input
+                      type="text" id="fullname" class="span7"
+                      name="form.name.fullname"
+                      placeholder="Bitte nennen Sie uns einen Ansprechpartner" />
+                </div>
+                <div class="help-inline error"
+                  tal:condition="errors/fullname | nothing"
+                  tal:content="errors/fullname|nothing" />
+            </div>
+        </div>
+        <div class="control-group"
+            tal:define="err_name errors/project|nothing"
+            tal:attributes="class python:err_name and 'control-group error' or 'control-group'">
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="icon-comment" /></span><textarea
+                      type="text" id="project" class="span7"
+                      name="form.name.project"
+                      rows="5"
+                      required="required"
+                      placeholder="Bitte beschreiben Sie kurz Ihr Projekt" />
+                </div>
+                <div class="help-inline error"
+                  tal:condition="errors/project | nothing"
+                  tal:content="errors/project|nothing" />
+            </div>
+        </div>
+        <div class="control-group"
+            tal:define="err_name errors/tasks|nothing"
+            tal:attributes="class python:err_name and 'control-group error' or 'control-group'">
+            <div class="controls">
+                <div class="input-prepend">
+                    <span class="add-on chzn-add-on"><i class="icon-tasks" /></span><select
+                      data-placeholder="Was können wir für Sie tun?"
+                      id="form.name.tasks"
+                      multiple
+                      class="chzn-select span7">
+                      <option value="Programmierung">Programmierung</option>
+                      <option value="Software Entwicklung">Software Entwicklung</option>
+                      <option value="E-Commerce">Online Shops</option>
+                      <option value="SEO">Suchmaschinenoptimierung (SEO)</option>
+                      <option value="DevOps">Server Adminsitration</option>
+                      <option value="CMS">Redaktionssysteme (CMS)</option>
+                      <option value="Intranet">Intranet</option>
+                      <option value="Infrastruktur">Server Konzeption</option>
+                      <option value="Security">Security</option>
+                      <option value="Seminare">Seminare und Schulungen</option>
+                    </select>
+                </div>
+                <div class="help-inline error"
+                  tal:condition="errors/project | nothing"
+                  tal:content="errors/project|nothing" />
+            </div>
+        </div>
+        <div class="form-actions">
+            <input type="submit" class="btn btn-warning btn-large"
+                value="Anfrage senden" name="form.button.Submit" />
+        </div>
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
+      </form>
+  </section>
+
+    
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

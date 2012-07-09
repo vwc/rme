@@ -22,5 +22,14 @@
             }
         });
         $("#tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({ effect: 'slide'});
+        $(".chzn-select").chosen({
+            no_results_text: "Keine Treffer gefunden"
+        });
+        $("#form-callback").validator();
+        /* Apply to popup forms */
+        $(document).bind('loadInsideOverlay', function (e) {
+            $('select', $(this)).chosen();
+            $('#form-callback', $(this)).validator();
+        });
     });
 }(jQuery));

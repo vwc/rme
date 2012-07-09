@@ -4995,7 +4995,8 @@ body {
   margin-right: auto;
   margin-bottom: 18px;
 }
-.circled:hover {
+.circled:hover,
+.circled.highlighted {
   opacity: 1;
   filter: alpha(opacity=100);
 }
@@ -5120,15 +5121,24 @@ input.context.active {
 input.context:first-child {
   *margin-left: 0;
 }
-#form-callback input[type="text"] {
+#form-callback input[type="text"],
+#form-callback .uneditable-input {
   height: 30px;
   font-size: 26px;
   line-height: 28px;
+}
+#form-callback textarea {
+  line-height: 28px;
+  font-size: 26px;
+  width: 530px;
 }
 #form-callback .add-on {
   height: 30px;
   font-size: 26px;
   line-height: 26px;
+}
+#form-callback .add-on.chzn-add-on {
+  margin-top: -38px;
 }
 #form-callback .form-actions {
   background: transparent;

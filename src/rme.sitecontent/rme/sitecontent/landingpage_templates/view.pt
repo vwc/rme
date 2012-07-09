@@ -23,8 +23,9 @@
           Kostenloser R&uuml;ckrufservice</a>
       </div>
       <div class="btn-group">
-        <a href="#test2" class="btn btn-warning btn-large">
-          Enquiry form</a>
+        <a href="#test2" class="btn btn-warning btn-large popoverForm"
+          tal:attributes="href python:portal_url + '/@@expert-enquiry'">
+          Anfrage per E-Mail</a>
       </div>
       </div>
     </div>

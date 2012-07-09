@@ -18,5 +18,13 @@
         e("#tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({
             effect: "slide"
         });
+        e(".chzn-select").chosen({
+            no_results_text: "Keine Treffer gefunden"
+        });
+        e("#form-callback").validator();
+        e(document).bind("loadInsideOverlay", function(t) {
+            e("select", e(this)).chosen();
+            e("#form-callback", e(this)).validator();
+        });
     });
 })(jQuery);

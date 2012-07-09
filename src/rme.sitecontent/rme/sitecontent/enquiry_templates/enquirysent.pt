@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="rme.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+    <div class="page-header">
+      <h1>Anfrageformular</h1>
+    </div>
+    
+    <div class="alert alert-block">
+      <h4 class="alert-headline">Vielen Dank f&uuml;r Ihr Interesse</h4>
+      <p>Wir freuen uns darauf,
+        mit Ihnen &uuml;ber Ihr Projekt oder Ihr Unternehmen zu sprechen</p>
+    </div>
+
+    <form class="form form-inline"
+        id="form-callback"
+        tal:attributes="action request/URL" method="post">
+        <div class="form-actions">
+            <input type="submit" class="btn btn-primary btn-large"
+                value="Beenden" name="form.button.Cancel" />
+        </div>
+    </form>
+
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

@@ -78,8 +78,15 @@
                 css:theme-children="#price-three" />
         </rules>
 
+        <replace css:content-children="#expert-introduction"
+            css:theme-children="#hero-content" />
+        <replace css:content-children="#expert-details"
+            css:theme-children="#hero-content-two" />
+        <replace css:content-children="#expert-content"
+            css:theme-children="#main-content" />
+
         <!-- Document Content -->
-        <replace css:content-children="#content" css:theme-children="#main-content" />
+        <!--<replace css:content-children="#content" css:theme-children="#main-content" />-->
         <!--<before css:content="#edit-bar" css:theme="#document-content" />-->
         <before css:content=".portalMessage" css:theme="#logo-wrapper" />
         <!-- Columns -->
