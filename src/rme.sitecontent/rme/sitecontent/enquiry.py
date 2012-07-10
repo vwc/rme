@@ -28,6 +28,7 @@ class EnquiryView(grok.View):
             fullname = self.request.get('form.name.fullname', None)
             email = self.request.get('form.name.email', None)
             project = self.request.get('form.name.project', None)
+            tasks = self.request.get('form.name.tasks', None)
             # timeframe = self.request.get('form.name.timeframe', None)
             if not email or email is None:
                 self.errors['email'] = _(u"A valid E-mail address is required")
@@ -37,7 +38,8 @@ class EnquiryView(grok.View):
                 data = {
                     'email': email,
                     'fullname': fullname,
-                    'project': project
+                    'project': project,
+                    'tasks': tasks
                 }
                 self._send_request(data)
 
@@ -48,7 +50,8 @@ class EnquiryView(grok.View):
         subject = _(u"Rent my Expert: Enquiry")
         options = dict(email=data['email'],
                        name=data['fullname'],
-                       project=data['project'])
+                       project=data['project'],
+                       tasks=data['tasks'])
         body = ViewPageTemplateFile('enquiryemail.pt')(self, **options)
         mailhost = getToolByName(context, 'MailHost')
         mailhost.send(body,

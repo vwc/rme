@@ -79,6 +79,7 @@
                     <span class="add-on chzn-add-on"><i class="icon-tasks" /></span><select
                       data-placeholder="Was können wir für Sie tun?"
                       id="form.name.tasks"
+                      name="form.name.tasks"
                       multiple
                       class="chzn-select span7">
                       <optgroup label="Kommunikation">
