@@ -81,16 +81,41 @@
                       id="form.name.tasks"
                       multiple
                       class="chzn-select span7">
-                      <option value="Programmierung">Programmierung</option>
-                      <option value="Software Entwicklung">Software Entwicklung</option>
-                      <option value="E-Commerce">Online Shops</option>
-                      <option value="SEO">Suchmaschinenoptimierung (SEO)</option>
-                      <option value="DevOps">Server Adminsitration</option>
-                      <option value="CMS">Redaktionssysteme (CMS)</option>
-                      <option value="Intranet">Intranet</option>
-                      <option value="Infrastruktur">Server Konzeption</option>
-                      <option value="Security">Security</option>
-                      <option value="Seminare">Seminare und Schulungen</option>
+                      <optgroup label="Kommunikation">
+                        <option value="Markenanalyse">Markenanalyse</option>
+                        <option value="Markenentwicklung">Markenentwicklung</option>
+                        <option value="Unternehmenskommunikation">Unternehmenskommunikation</option>
+                        <option value="Medienplanung">Medienplanung</option>
+                        <option value="Kampagnen">Kampagnen</option>
+                        <option value="Projektmanagement">Projektmanagement</option>
+                        <option value="Soziale Netzwerke">Soziale Netzwerke</option>
+                        <option value="Green Marketing">Green Marketing</option>
+                        <option value="Seminare">Seminare (Kommunikation)</option>
+                      </optgroup>
+                      <optgroup label="Design">
+                        <option value="Corporate Design">Corporate Design</option>
+                        <option value="Gebrauchsgrafik">Gebrauchsgrafik</option>
+                        <option value="Weblayout">Weblayout</option>
+                        <option value="Typographie">Typographie</option>
+                        <option value="Bildbearbeitung">Bildbearbeitung</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Videobearbeitung">Videobearbeitung</option>
+                        <option value="Praesentation">Pr&auml;sentation</option>
+                        <option value="3D">3D</option>
+                        <option value="Seminare">Seminare (Design)</option>
+                      </optgroup>
+                      <optgroup label="Technik">
+                        <option value="Programmierung">Programmierung</option>
+                        <option value="Software Entwicklung">Software Entwicklung</option>
+                        <option value="E-Commerce">Online Shops</option>
+                        <option value="SEO">Suchmaschinenoptimierung (SEO)</option>
+                        <option value="DevOps">Server Adminsitration</option>
+                        <option value="CMS">Redaktionssysteme (CMS)</option>
+                        <option value="Intranet">Intranet</option>
+                        <option value="Infrastruktur">Server Konzeption</option>
+                        <option value="Security">Security</option>
+                        <option value="Seminare">Seminare (Technik)</option>
+                      </optgroup>
                     </select>
                 </div>
                 <div class="help-inline error"
