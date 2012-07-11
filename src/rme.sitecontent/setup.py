@@ -28,6 +28,7 @@ setup(name='rme.sitecontent',
           'setuptools',
           'plone.app.dexterity',
           'plone.namedfile [blobs]',
+          'collective.upload',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

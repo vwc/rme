@@ -15,7 +15,7 @@
                 }
             }
         });
-        e("#tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({
+        e("#tooltip-expert, #tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({
             effect: "slide"
         });
         e(".chzn-select").chosen({
@@ -23,7 +23,9 @@
         });
         e("#form-callback").validator();
         e(document).bind("loadInsideOverlay", function(t) {
-            e("select", e(this)).chosen();
+            e("select", e(this)).chosen({
+                no_results_text: "Keine Treffer"
+            });
             e("#form-callback", e(this)).validator();
         });
     });

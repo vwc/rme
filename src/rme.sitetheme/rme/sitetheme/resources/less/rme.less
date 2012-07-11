@@ -112,6 +112,11 @@ body {
         text-indent: -10000px;
         background:url(../img/sprite.png) no-repeat -440px 0px transparent;
     }
+    .thumbnail {
+        background: @white;
+        padding-top: @baseLineHeight;
+        border-color: @rmeBlueDark;
+    }
 }
 
 .circled {
@@ -177,6 +182,20 @@ body {
         margin-bottom: @baseLineHeight / 2;
     }
 }
+
+body.section-design {
+    .figurine {
+        .size(160px, 90px);
+        background-position: -229px 0px;
+    }
+}
+
+body.section-technik {
+    .figurine {
+        background-position: -317px 0px;
+    }
+}
+
 
 #content-wrapper {
     padding: 60px 0px @baseLineHeight;

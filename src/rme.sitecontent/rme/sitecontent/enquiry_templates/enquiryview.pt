@@ -82,6 +82,7 @@
                       name="form.name.tasks"
                       multiple
                       class="chzn-select span7">
+                      <option></option>
                       <optgroup label="Kommunikation">
                         <option value="Markenanalyse">Markenanalyse</option>
                         <option value="Markenentwicklung">Markenentwicklung</option>

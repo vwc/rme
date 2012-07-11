@@ -4979,6 +4979,11 @@ body {
   text-indent: -10000px;
   background: url(../img/sprite.png) no-repeat -440px 0px transparent;
 }
+.splashbox .thumbnail {
+  background: #ffffff;
+  padding-top: 18px;
+  border-color: #a8d4d7;
+}
 .circled {
   width: 200px;
   height: 200px;
@@ -5052,6 +5057,14 @@ body {
 }
 .expert-info h5 {
   margin-bottom: 9px;
+}
+body.section-design .figurine {
+  width: 90px;
+  height: 160px;
+  background-position: -229px 0px;
+}
+body.section-technik .figurine {
+  background-position: -317px 0px;
 }
 #content-wrapper {
   padding: 60px 0px 18px;

@@ -21,14 +21,16 @@
                 expose: {color: '#fff'}
             }
         });
-        $("#tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({ effect: 'slide'});
+        $("#tooltip-expert, #tooltip-marketing, #tooltip-design, #tooltip-programming").tooltip({ effect: 'slide'});
         $(".chzn-select").chosen({
             no_results_text: "Keine Treffer gefunden"
         });
         $("#form-callback").validator();
         /* Apply to popup forms */
         $(document).bind('loadInsideOverlay', function (e) {
-            $('select', $(this)).chosen();
+            $('select', $(this)).chosen({
+                no_results_text: "Keine Treffer"
+            });
             $('#form-callback', $(this)).validator();
         });
     });

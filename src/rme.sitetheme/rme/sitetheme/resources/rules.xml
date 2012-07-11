@@ -81,6 +81,8 @@
                 css:theme-children="#price-three" />
         </rules>
         <rules css:if-content="body.portaltype-rme-sitecontent-expert">
+        <replace css:content="#expert-image"
+            css:theme="#hero-image" />
         <replace css:content-children="#expert-introduction"
             css:theme-children="#hero-content" />
         <replace css:content-children="#expert-details"
