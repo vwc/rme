@@ -4984,6 +4984,21 @@ body {
   padding-top: 18px;
   border-color: #a8d4d7;
 }
+body.section-kommunikation #hero-image {
+  width: 380px;
+  height: 250px;
+  background-position: 0px -550px;
+}
+body.section-design #hero-image {
+  width: 380px;
+  height: 250px;
+  background-position: -400px -550px;
+}
+body.section-technik #hero-image {
+  width: 380px;
+  height: 250px;
+  background-position: 0px -800px;
+}
 .circled {
   width: 200px;
   height: 200px;
@@ -5057,14 +5072,6 @@ body {
 }
 .expert-info h5 {
   margin-bottom: 9px;
-}
-body.section-design .figurine {
-  width: 90px;
-  height: 160px;
-  background-position: -229px 0px;
-}
-body.section-technik .figurine {
-  background-position: -317px 0px;
 }
 #content-wrapper {
   padding: 60px 0px 18px;
